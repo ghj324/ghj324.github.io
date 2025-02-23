@@ -36,7 +36,7 @@ collections:
 navigation:
   - title: 主页 Home
     link: /
-  - title: 科研项目 Research
+  - title: 八宝粥 Research
     link: /research.html
   - title: 论文 Publications
     link: /publications.html
