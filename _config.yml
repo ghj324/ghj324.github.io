@@ -1,4 +1,4 @@
-name: 肖航课题组  Xiao Research Group
+name:八宝粥  Xiao Research Group
 url: https://xiaohang007.github.io/
 
 exclude: [bibble, README.md, Makefile, screenshot.png]
@@ -12,7 +12,7 @@ encoding: utf-8
 # Sections on the "people" page.
 roles:
   - key: faculty
-    name: 教师 Faculty
+    name: 组员 Faculty
   - key: grad
     name: 研究生 Graduate Students
   - key: ugrad
