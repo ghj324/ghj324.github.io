@@ -48,3 +48,38 @@ layout: default
         <img src="/img/health-poster.jpg" alt="健康养生宣传海报">
     </section>
 </div>
+<!-- ... 前面的代码保持不变 ... -->
+
+<section class="contact-section">
+    <h2>联系我们</h2>
+    <div class="contact-info" id="contactInfo" style="display: none;">
+        <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <p>400-888-9999</p>
+        </div>
+        <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <p>contact@guoyitang.com</p>
+        </div>
+        <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>广州市天河区康乐路88号</p>
+        </div>
+    </div>
+    <button class="contact-toggle" onclick="toggleContact()">查看联系方式</button>
+</section>
+
+<!-- 添加JavaScript代码 -->
+<script>
+function toggleContact() {
+    const contactInfo = document.getElementById('contactInfo');
+    const button = document.querySelector('.contact-toggle');
+    if (contactInfo.style.display === 'none') {
+        contactInfo.style.display = 'block';
+        button.textContent = '收起联系方式';
+    } else {
+        contactInfo.style.display = 'none';
+        button.textContent = '查看联系方式';
+    }
+}
+</script>
