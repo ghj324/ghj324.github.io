@@ -102,3 +102,25 @@ function displayResults(analysis) {
         </div>
     `;
 }
+document.addEventListener('DOMContentLoaded', function() {
+    const surveyBtn = document.getElementById('survey-btn');
+    const modal = document.getElementById('qr-modal');
+    const closeBtn = document.getElementsByClassName('close')[0];
+
+    // 显示二维码弹窗
+    surveyBtn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // 关闭弹窗
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // 点击弹窗外部关闭
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+});
