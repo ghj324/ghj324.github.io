@@ -4,6 +4,7 @@ body {
     padding: 0;
     width: 100%;
     font-family: "Microsoft YaHei", sans-serif;
+    background: #f5f1e6;  /* 米色背景 */
 }
 
 .healthcare-home {
@@ -11,208 +12,64 @@ body {
     max-width: 100%;
     margin: 0;
     padding: 0;
+    background-image: url('../img/paper-texture.png');  /* 添加纸张纹理 */
+    background-repeat: repeat;
 }
 
 /* 英雄区域 */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/hero-bg.jpg');
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                url('../img/chinese-medicine-bg.jpg');
     background-size: cover;
     background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
+    position: relative;
 }
 
-.hero-content {
-    max-width: 800px;
-    padding: 2rem;
-}
-
-.hero-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.hero-buttons {
-    margin-top: 2rem;
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background: #4a7c59;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-.cta-button:hover {
-    background: #3a6149;
-}
-
-.cta-button.secondary {
-    background: transparent;
-    border: 2px solid white;
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../img/rice-paper.png');
+    opacity: 0.1;
+    pointer-events: none;
 }
 
 /* 特色服务区域 */
 .features {
-    width: 100%;
-    padding: 4rem 0;
-    text-align: center;
-    background: #f5f5f5;
-    margin-top: 2rem;
+    background: rgba(245, 241, 230, 0.9);
+    position: relative;
 }
 
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.feature-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
-}
-
-.feature-card i {
-    font-size: 2.5rem;
-    color: #4a7c59;
-    margin-bottom: 1rem;
-}
-
-.feature-card h3 {
-    color: #333;
-    margin-bottom: 1rem;
-}
-
-.feature-link {
-    display: inline-block;
-    margin-top: 1rem;
-    color: #4a7c59;
-    text-decoration: none;
-}
-
-/* 联系卡片特殊样式 */
-.contact-card .contact-info {
-    margin-top: 1rem;
-    font-size: 0.9rem;
-    background: #f8f8f8;
-    border-radius: 5px;
-    padding: 1rem;
-}
-
-.contact-card .contact-info p {
-    margin: 0.5rem 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.contact-toggle {
-    margin-top: 1rem;
-    padding: 0.8rem 1.5rem;
-    background: #4a7c59;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.contact-toggle:hover {
-    background: #3a6149;
+.features::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../img/chinese-pattern.png');
+    opacity: 0.05;
+    pointer-events: none;
 }
 
 /* 健康资讯区域 */
 .latest-articles {
-    width: 100%;
-    text-align: center;
-    padding: 4rem 0;
-    background: white;
-    margin-bottom: 0;
+    background: rgba(255, 253, 248, 0.95);
+    position: relative;
 }
 
-.article-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.article-content h3 {
-    color: #333;
-    margin-bottom: 1rem;
-}
-
-.read-more {
-    display: inline-block;
-    margin-top: 1rem;
-    color: #4a7c59;
-    text-decoration: none;
-}
-
-/* 响应式布局 */
-@media (max-width: 1200px) {
-    .feature-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .feature-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .hero-content h2 {
-        font-size: 2rem;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 480px) {
-    .feature-grid {
-        grid-template-columns: 1fr;
-    }
-}
-/* 网站标题样式 */
-.site-header {
-    position: fixed;
+.latest-articles::before {
+    content: '';
+    position: absolute;
     top: 0;
     left: 0;
-    padding: 1rem 2rem;
-    z-index: 1000;
+    right: 0;
+    bottom: 0;
+    background: url('../img/brush-texture.png');
+    opacity: 0.03;
+    pointer-events: none;
 }
-
-.site-title {
-    color: white;
-    margin: 0;
-    font-size: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-/* 原有的整体布局样式保持不变 */
-body {
-    margin: 0;
-    padding: 0;
-    // ... 其他样式保持不变 ...
