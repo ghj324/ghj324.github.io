@@ -1,1 +1,80 @@
+---
+layout: default
+---
 
+<div class="healthcare-home">
+    <section class="hero">
+        <div class="hero-content">
+            <h2>传承千年智慧 守护现代健康</h2>
+            <p>专业的中医调理，为您提供个性化健康方案</p>
+            <div class="hero-buttons">
+                <a href="/constitution" class="cta-button">立即体质辨识</a>
+                <a href="/contact" class="cta-button secondary">预约咨询</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>特色服务</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <i class="fas fa-book-medical"></i>
+                <h3>中医体质学说</h3>
+                <p>传统中医理论精髓，科学解读体质类型</p>
+                <a href="/theory" class="feature-link">了解更多</a>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-heartbeat"></i>
+                <h3>体质辨识</h3>
+                <p>专业中医师一对一体质辨识</p>
+                <a href="/constitution" class="feature-link">开始测试</a>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-mortar-pestle"></i>
+                <h3>古方汤药</h3>
+                <p>传统经典方剂，调理亚健康</p>
+                <a href="/medicine" class="feature-link">查看详情</a>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-seedling"></i>
+                <h3>药食同源</h3>
+                <p>养生食疗方案，日常调理保健</p>
+                <a href="/food" class="feature-link">浏览方案</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="latest-articles">
+        <h2>健康资讯</h2>
+        <div class="article-grid">
+            {% for post in site.posts limit:3 %}
+            <article class="article-card">
+                {% if post.image %}
+                <img src="{{ post.image | prepend: site.baseurl }}" alt="{{ post.title }}">
+                {% endif %}
+                <div class="article-content">
+                    <h3>{{ post.title }}</h3>
+                    <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+                    <a href="{{ post.url | prepend: site.baseurl }}" class="read-more">阅读更多</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="consultation">
+        <div class="consultation-content">
+            <h2>免费健康咨询</h2>
+            <p>专业中医师为您解答健康困惑</p>
+            <form class="consultation-form" action="/contact" method="POST">
+                <input type="text" name="name" placeholder="您的姓名" required>
+                <input type="tel" name="phone" placeholder="联系电话" required>
+                <textarea name="message" placeholder="请简述您的健康问题" required></textarea>
+                <button type="submit" class="submit-btn">提交咨询</button>
+            </form>
+        </div>
+    </section>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="{{ '/css/healthcare.css' | prepend: site.baseurl }}">
