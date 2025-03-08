@@ -141,3 +141,37 @@ function displayAIAdvice(advice) {
         </div>
     `;
 }
+// 症状与体质对应关系数据
+const constitutionData = {
+    symptoms: {
+        aging: {
+            constitution: '肾气虚质',
+            prescriptions: ['六味地黄丸', '金匮肾气丸'],
+            teas: ['枸杞菊花茶', '何首乌茶'],
+            advice: '注意保暖，适度运动，早睡早起，忌生冷'
+        },
+        insomnia: {
+            constitution: '心脾两虚',
+            prescriptions: ['归脾汤', '天王补心丹'],
+            teas: ['酸枣仁茶', '百合茯苓茶'],
+            advice: '保持规律作息，避免过度思虑，适当运动'
+        }
+        // ... 其他症状配置
+    }
+};
+
+// 页面加载完成后执行
+document.addEventListener('DOMContentLoaded', function() {
+    const healthSurvey = document.getElementById('healthSurvey');
+    const resultDiv = document.getElementById('analysisResult');
+
+    if (healthSurvey) {
+        healthSurvey.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(healthSurvey);
+            const symptoms = formData.getAll('symptoms');
+            const analysis = analyzeSymptoms(symptoms);
+            displayResults(analysis);
+        });
+    }
+});
