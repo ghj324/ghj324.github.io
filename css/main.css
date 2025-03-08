@@ -155,3 +155,35 @@ header {
     height: auto;
     margin-top: 2em;
 }
+/* ... 之前的样式 ... */
+
+#product-showcase {
+    height: 50vh;
+    padding: 2em;
+    background-color: var(--background-color);
+}
+
+.product-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+.product-image-wrapper {
+    text-align: center;
+}
+
+.product-image {
+    max-height: 400px;
+    width: auto;
+}
+
+.product-logo {
+    max-width: 300px;
+    height: auto;
+}
+
+/* ... 之后的样式 ... */
