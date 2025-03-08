@@ -195,3 +195,24 @@ body {
         grid-template-columns: 1fr;
     }
 }
+/* 网站标题样式 */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1rem 2rem;
+    z-index: 1000;
+}
+
+.site-title {
+    color: white;
+    margin: 0;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* 原有的整体布局样式保持不变 */
+body {
+    margin: 0;
+    padding: 0;
+    // ... 其他样式保持不变 ...
