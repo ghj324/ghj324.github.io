@@ -124,3 +124,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+document.addEventListener('DOMContentLoaded', function() {
+    // 获取元素
+    const surveyBtn = document.getElementById('survey-btn');
+    const modal = document.getElementById('qr-modal');
+    
+    if (surveyBtn && modal) {
+        // 点击体质调查按钮显示二维码
+        surveyBtn.addEventListener('click', function() {
+            modal.style.display = 'block';
+        });
+
+        // 点击模态框外部关闭
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // 点击关闭按钮关闭
+        const closeBtn = modal.querySelector('.close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+        }
+    }
+});
