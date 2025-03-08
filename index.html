@@ -41,35 +41,33 @@ layout: default
                 <p>养生食疗方案</p>
                 <a href="/food" class="feature-link">浏览方案</a>
             </div>
+            <div class="feature-card contact-card">
+                <i class="fas fa-phone-alt"></i>
+                <h3>联系我们</h3>
+                <p>专业咨询服务</p>
+                <button class="contact-toggle" onclick="toggleContact()">查看联系方式</button>
+                <div class="contact-info" id="contactInfo" style="display: none;">
+                    <p><i class="fas fa-phone"></i> 400-888-9999</p>
+                    <p><i class="fas fa-envelope"></i> contact@guoyitang.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 广州市天河区康乐路88号</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="poster-section">
-        <img src="/img/health-poster.jpg" alt="健康养生宣传海报">
+    <section class="latest-articles">
+        <h2>健康资讯</h2>
+        <div class="article-content">
+            <h3>中医养生咨询</h3>
+            <p>专业中医师提供个性化养生方案，通过传统中医理论和现代健康理念相结合，为您定制专属调理计划。详情请联系我们的健康顾问。</p>
+            <a href="/contact" class="read-more">了解更多</a>
+        </div>
     </section>
 </div>
-<!-- ... 前面的代码保持不变 ... -->
 
-<section class="contact-section">
-    <h2>联系我们</h2>
-    <div class="contact-info" id="contactInfo" style="display: none;">
-        <div class="info-item">
-            <i class="fas fa-phone"></i>
-            <p>400-888-9999</p>
-        </div>
-        <div class="info-item">
-            <i class="fas fa-envelope"></i>
-            <p>contact@guoyitang.com</p>
-        </div>
-        <div class="info-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <p>广州市天河区康乐路88号</p>
-        </div>
-    </div>
-    <button class="contact-toggle" onclick="toggleContact()">查看联系方式</button>
-</section>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="{{ '/css/healthcare.css' | prepend: site.baseurl }}">
 
-<!-- 添加JavaScript代码 -->
 <script>
 function toggleContact() {
     const contactInfo = document.getElementById('contactInfo');
