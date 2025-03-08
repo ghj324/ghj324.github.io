@@ -1,42 +1,10 @@
-name:八宝粥  Xiao Research Group
-url: https://xiaohang007.github.io/
-
-exclude: [bibble, README.md, Makefile, screenshot.png]
-
-# colorize code snippets with the pygments module
-highlighter: pygments
-
-# The path structure for blog posts.
-permalink: /blog/:year/:month/:day/:title.html
-encoding: utf-8
-# Sections on the "people" page.
-roles:
-  - key: faculty
-    name: 组员 Faculty
-  - key: grad
-    name: 研究生 Graduate Students
-  - key: ugrad
-    name: 本科生 Undergraduate Students
-  - key: collab
-    name: 合作者 Collaborators
-
-
-# Number of news stories on the front page.
-front_page_news: 8
-
-# Base pathname for links.
-base: ''
-
-# make pages for the _projects folder
-collections:
-  projects:
-    output: true
-
-# Navigation bar links.
-navigation:
-  - title: 主页 Home
-    link: /
-  - title: 八宝粥 Research
-    link: /research.html
-  - title: 论文 Publications
-    link: /publications.html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cleared</title>
+</head>
+<body>
+    <!-- 页面已清空 -->
+</body>
+</html>
