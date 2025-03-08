@@ -1,9 +1,1 @@
-title: Empty Site
-description: ""
-baseurl: ""
-url: "https://ghj324.github.io"
-markdown: kramdown
-theme: jekyll-theme-primer
-plugins:
-  - jekyll-github-metadata
-  - jekyll-seo-tag
+
