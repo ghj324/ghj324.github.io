@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Cleared</title>
-</head>
-<body>
-    <!-- 页面已清空 -->
-</body>
-</html>
+title: Empty Site
+description: ""
+baseurl: ""
+url: "https://ghj324.github.io"
+markdown: kramdown
+theme: jekyll-theme-primer
+plugins:
+  - jekyll-github-metadata
+  - jekyll-seo-tag
