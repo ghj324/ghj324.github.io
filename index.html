@@ -17,13 +17,13 @@
             <div class="hero-content">
                 <h2>传承千年智慧 守护现代健康</h2>
                 <div class="hero-buttons">
-                    <a href="#features" class="cta-button">了解更多</a>
-                    <a href="#contact" class="cta-button secondary">联系我们</a>
+                    <a href="#" class="cta-button" onclick="openConstitutionDialog()">立即体质辨识</a>
+                    <a href="#" class="cta-button secondary" onclick="openSurveyDialog()">预约咨询</a>
                 </div>
             </div>
         </section>
 
-        <section class="features" id="features">
+        <section class="features">
             <div class="feature-grid">
                 <div class="feature-card">
                     <i class="fas fa-book-medical"></i>
@@ -53,5 +53,18 @@
             </div>
         </section>
     </div>
+
+    <!-- 体质辨识对话框 -->
+    <div id="constitutionDialog" class="dialog">
+        <!-- ... 之前的体质辨识对话框内容 ... -->
+    </div>
+
+    <!-- 预约咨询对话框 -->
+    <div id="surveyDialog" class="dialog">
+        <!-- ... 之前的预约咨询对话框内容 ... -->
+    </div>
+
+    <script src="constitution.js"></script>
+    <script src="survey.js"></script>
 </body>
 </html>
