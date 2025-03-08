@@ -3,53 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if page.title %}{{ page.title }} - {% endif %}国医堂</title>
-    <link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ '/css/main.css' | relative_url }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <h1>国医堂</h1>
-            </div>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-            <ul class="nav-links">
-                {% for item in site.navigation %}
-                <li><a href="{{ item.url | prepend: site.baseurl }}" {% if page.url == item.url %}class="active"{% endif %}>{{ item.title }}</a></li>
-                {% endfor %}
-            </ul>
-        </nav>
-    </header>
-
     {{ content }}
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>联系方式</h3>
-                <p><i class="fas fa-phone"></i> 400-888-9999</p>
-                <p><i class="fas fa-envelope"></i> contact@guoyitang.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> 广州市天河区康乐路88号</p>
-            </div>
-            <div class="footer-section">
-                <h3>营业时间</h3>
-                <p>周一至周五: 9:00 - 21:00</p>
-                <p>周六至周日: 10:00 - 20:00</p>
-            </div>
-            <div class="footer-section">
-                <h3>快速链接</h3>
-                <ul>
-                    <li><a href="/theory">中医体质学说</a></li>
-                    <li><a href="/constitution">体质辨识</a></li>
-                    <li><a href="/shop">在线购买</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 国医堂 版权所有</p>
-        </div>
-    </footer>
 </body>
 </html>
