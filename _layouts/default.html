@@ -4,10 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI智能养生</title>
-    <link rel="stylesheet" href="{{ '/css/healthcare.css' | relative_url }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 1rem 2rem;
+            z-index: 1000;
+        }
+        .site-title {
+            color: white;
+            margin: 0;
+            font-size: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+    </style>
 </head>
 <body>
+    <header class="site-header">
+        <h1 class="site-title">AI智能养生</h1>
+    </header>
     {{ content }}
 </body>
 </html>
