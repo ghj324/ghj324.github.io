@@ -1,95 +1,57 @@
----
-layout: default
----
-
-<div class="healthcare-home">
-    <section class="hero">
-        <div class="hero-content">
-            <h2>传承千年智慧 守护现代健康</h2>
-            <p>专业的中医调理，为您提供个性化健康方案</p>
-            <div class="hero-buttons">
-                <a href="/constitution" class="cta-button">立即体质辨识</a>
-                <a href="/contact" class="cta-button secondary">预约咨询</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="latest-articles">
-        <h2>健康资讯</h2>
-        <div class="article-content">
-            <h3>中医养生咨询</h3>
-            <p>专业中医师提供个性化养生方案，通过传统中医理论和现代健康理念相结合，为您定制专属调理计划。详情请联系我们的健康顾问。</p>
-            <a href="/contact" class="read-more">了解更多</a>
-        </div>
-    </section>
-
-    <section class="features">
-        <h2>特色服务</h2>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <i class="fas fa-book-medical"></i>
-                <h3>中医体质学说</h3>
-                <p>传统中医理论精髓</p>
-                <a href="/theory" class="feature-link">了解更多</a>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-heartbeat"></i>
-                <h3>体质辨识</h3>
-                <p>专业体质辨识</p>
-                <a href="/constitution" class="feature-link">开始测试</a>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-mortar-pestle"></i>
-                <h3>古方汤药</h3>
-                <p>经典调理方案</p>
-                <a href="/medicine" class="feature-link">查看详情</a>
-            </div>
-            <div class="feature-card">
-                <i class="fas fa-seedling"></i>
-                <h3>药食同源</h3>
-                <p>养生食疗方案</p>
-                <a href="/food" class="feature-link">了解更多</a>
-            </div>
-            <div class="feature-card contact-card">
-                <i class="fas fa-phone-alt"></i>
-                <h3>联系我们</h3>
-                <p>专业咨询服务</p>
-                <button class="contact-toggle" onclick="toggleContact()">查看联系方式</button>
-                <div class="contact-info" id="contactInfo" style="display: none;">
-                    <p><i class="fas fa-phone"></i> 400-888-9999</p>
-                    <p><i class="fas fa-envelope"></i> contact@guoyitang.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> 广州市天河区康乐路88号</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI智能养生机</title>
+    <link rel="stylesheet" href="healthcare.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="healthcare-home">
+        <header class="site-header">
+            <h1 class="site-title">AI智能养生机</h1>
+        </header>
+        
+        <section class="hero">
+            <div class="hero-content">
+                <h2>传承千年智慧 守护现代健康</h2>
+                <div class="hero-buttons">
+                    <a href="#features" class="cta-button">了解更多</a>
+                    <a href="#contact" class="cta-button secondary">联系我们</a>
                 </div>
             </div>
-        </div>
-    </section>
-</div>
+        </section>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link rel="stylesheet" href="{{ '/css/healthcare.css' | prepend: site.baseurl }}">
-
-<script>
-function toggleContact() {
-    const contactInfo = document.getElementById('contactInfo');
-    const button = document.querySelector('.contact-toggle');
-    if (contactInfo.style.display === 'none') {
-        contactInfo.style.display = 'block';
-        button.textContent = '收起联系方式';
-    } else {
-        contactInfo.style.display = 'none';
-        button.textContent = '查看联系方式';
-    }
-}
-</script>
-<div class="healthcare-home">
-    <section class="hero">
-        <div class="hero-content">
-            <h2>AI智能养生</h2>
-<div class="healthcare-home">
-    <header class="site-header">
-        <h1 class="site-title">AI智能养生</h1>
-    </header>
-    <section class="hero">
-        <div class="hero-content">
-            <h2>传承千年智慧 守护现代健康</h2>
-            // ... 其他内容保持不变 ...
+        <section class="features" id="features">
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-book-medical"></i>
+                    <h3>中医体质学说</h3>
+                    <p>探索传统中医体质理论</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>体质辨识</h3>
+                    <p>专业的体质评估系统</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mortar-pestle"></i>
+                    <h3>古方汤药</h3>
+                    <p>传统配方智能推荐</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-seedling"></i>
+                    <h3>药食同源</h3>
+                    <p>养生食疗方案定制</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>联系我们</h3>
+                    <p>专业咨询服务</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
