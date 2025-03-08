@@ -1,85 +1,55 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>{{ site.name }}: {{ page.title }}</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet"
-              href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-              integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
-              crossorigin="anonymous">
-        <link rel="stylesheet"
-              href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="{{ site.base }}/css/group.css">
-    </head>
-    <body>
-        <div class="container">
-            <!-- This is a bit nasty, but it basically says be a column first, and on larger screens be a spaced out row -->
-            <div class="header d-flex
-                        flex-column
-                        flex-md-row justify-content-md-between">
-                <a href="{{ site.base }}/" class="">
-                    <img src="{{ site.base }}/img/logo.png" 
-                         srcset="{{ site.base }}/img/logo@2x.png 2x"
-                         alt="Awesome" id="logo">
-                </a>
-                <ul class="nav nav-pills justify-content-center">
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}国医堂</title>
+    <link rel="stylesheet" href="{{ '/css/main.css' | prepend: site.baseurl }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>国医堂</h1>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                {% for item in site.navigation %}
+                <li><a href="{{ item.url | prepend: site.baseurl }}" {% if page.url == item.url %}class="active"{% endif %}>{{ item.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </header>
 
-                    {% assign shorturl = page.url | replace:'.html','' | replace:'index','' %}
-                    {% for item in site.navigation %}
+    {{ content }}
 
-                        {% assign itemshorturl = item.link | replace:'.html','' %}
-
-                        {% assign maybe-active = '' %}
-                        {% if item.title == 'Research' and page.layout == 'project' %}
-                            {% assign maybe-active = 'active' %}
-                        {% endif %}
-                        {% if itemshorturl == shorturl or is-research %}
-                            {% assign maybe-active = 'active' %}
-                        {% endif %}
-
-                        <li class="nav-item">
-                            <a class="nav-link {{ maybe-active }}"
-                               href="{{ site.base }}{{ item.link }}">
-                                {{ item.title }}
-                            </a>
-                        </li>
-
-                    {% endfor %}
-
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>联系方式</h3>
+                <p><i class="fas fa-phone"></i> 400-888-9999</p>
+                <p><i class="fas fa-envelope"></i> contact@guoyitang.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> 广州市天河区康乐路88号</p>
+            </div>
+            <div class="footer-section">
+                <h3>营业时间</h3>
+                <p>周一至周五: 9:00 - 21:00</p>
+                <p>周六至周日: 10:00 - 20:00</p>
+            </div>
+            <div class="footer-section">
+                <h3>快速链接</h3>
+                <ul>
+                    <li><a href="/theory">中医体质学说</a></li>
+                    <li><a href="/constitution">体质辨识</a></li>
+                    <li><a href="/shop">在线购买</a></li>
                 </ul>
             </div>
-
-            {% if page.image %}
-                <img src="{{ page.image }}"
-                     alt="{{ page.title }}"
-                     style="max-width: 600px"
-                     class="img-fluid mx-auto d-block mb-4"/>
-            {% endif %}
-
-            {% if page.notitle != true %}
-                <h1>{{ page.title }}</h1>
-            {% endif %}
-
-            {{ content }}
-
-            <div class="footer">
-                <p>
-                    <a href="https://www.ln.edu.hk/sis">跨学科学院 School of Interdisciplinary Studies</a>
-                    -
-                    <a href="https://www.ln.edu.hk/chs">岭南大学 </a>
-                    <a href="https://www.ln.edu.hk/"> Lingnan University</a>
-                    -
-                    <a href = "mailto: hangxiao@ln.edu.hk">hangxiao@ln.edu.hk</a>
-                </p>
-
-
-            </div>
-
-        </div> <!-- /container -->
-
-        <!-- Support retina images. -->
-        <script type="text/javascript"
-                src="{{ site.base }}/js/srcset-polyfill.js"></script>
-    </body>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 国医堂 版权所有</p>
+        </div>
+    </footer>
+</body>
 </html>
