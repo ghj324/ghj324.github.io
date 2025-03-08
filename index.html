@@ -59,16 +59,14 @@
 </body>
 </html>
        <!-- ... 之前的代码 ... -->
-    <main>
-        <section id="product-showcase">
-            <div class="product-container">
-                <div class="product-image-wrapper">
-                    <img src="img/tea-machine.jpg" alt="智能养生机" class="product-image">
-                </div>
-                <div class="product-image-wrapper">
-                    <img src="img/tea-logo.jpg" alt="每天养生茶" class="product-logo">
-                </div>
-            </div>
-        </section>
-    </main>
+   <section id="product-showcase">
+    <div class="product-container">
+        <div class="product-image-wrapper">
+            <img src="img/tea-machine.jpg" alt="智能养生机" class="product-image" onerror="console.log('图片加载失败:', this.src)">
+        </div>
+        <div class="product-image-wrapper">
+            <img src="img/tea-logo.jpg" alt="每天养生茶" class="product-logo" onerror="console.log('图片加载失败:', this.src)">
+        </div>
+    </div>
+</section>
     <!-- ... 之后的代码 ... -->
