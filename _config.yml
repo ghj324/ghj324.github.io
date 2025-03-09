@@ -1,1 +1,41 @@
+name: AI智能调养机
+url: https://ghj324.github.io
+baseurl: ""
 
+title: AI智能调养机
+description: 智能中医体质辨识与调养平台
+
+
+# 导航栏配置
+navigation:
+  - title: 首页
+    link: /
+  - title: 体质辨识
+    link: /constitution-test
+  - title: 点我自测
+    link: /self-test
+
+# 体质类型配置
+constitution_types:
+  - name: 平和质
+    link: /constitution/balanced
+  - name: 气虚质
+    link: /constitution/qi-deficiency
+  - name: 阳虚质
+    link: /constitution/yang-deficiency
+  - name: 阴虚质
+    link: /constitution/yin-deficiency
+  - name: 痰湿质
+    link: /constitution/phlegm-dampness
+  - name: 湿热质
+    link: /constitution/damp-heat
+  - name: 血瘀质
+    link: /constitution/blood-stasis
+  - name: 气郁质
+    link: /constitution/qi-stagnation
+  - name: 特禀质
+    link: /constitution/special
+
+# 插件配置
+plugins:
+  - jekyll-sitemap
