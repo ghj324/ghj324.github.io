@@ -1,4 +1,5 @@
 ---
+---
 layout: default
 title: 体质自测
 ---
@@ -7,6 +8,7 @@ title: 体质自测
     <div class="text-center my-5">
         <h1 class="mb-4">体质自测</h1>
         
+        <!-- 测试说明 -->
         <div class="card mb-5">
             <div class="card-body">
                 <p class="lead">生活匆忙，更需要身体健康。</p>
@@ -14,53 +16,39 @@ title: 体质自测
             </div>
         </div>
         
-        <p class="lead mb-5">扫描下方二维码开始体质评估</p>
-        
+        <!-- 二维码部分 -->
         <div class="qrcode-container mx-auto mb-4">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://wj.qq.com/s2/18743020/18qx/" 
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://wj.qq.com/s2/18743020/18qx//" 
                  alt="问卷二维码" 
                  class="img-fluid"
                  style="max-width: 300px; padding: 10px; background: white;">
         </div>
 
-        <!-- 添加结果显示区域 -->
-        <div id="analysis-result" class="mt-5" style="display: none;">
+        <!-- 分析结果部分 -->
+        <div class="mt-5">
             <div class="card">
                 <div class="card-body">
-                    <h3 class="card-title">您的体质分析结果</h3>
-                    <div class="constitution-type mt-4">
-                        <h4>体质类型：<span id="type"></span></h4>
-                        <p id="description" class="lead"></p>
-                    </div>
-                    <div class="recommendations mt-4">
-                        <h4>推荐养生茶饮</h4>
-                        <ul id="tea-list" class="list-unstyled"></ul>
+                    <h3>常见体质类型及调理建议</h3>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <h4>阴虚体质</h4>
+                            <p>推荐：菊花枸杞茶、石斛养生茶</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>阳虚体质</h4>
+                            <p>推荐：生姜红糖茶、桂圆红枣茶</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>气虚体质</h4>
+                            <p>推荐：人参养生茶、黄芪当归茶</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>痰湿体质</h4>
+                            <p>推荐：荷叶山楂茶、陈皮普洱茶</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<script>
-// 检查URL参数是否包含分析结果
-window.onload = function() {
-    if (window.location.search.includes('completed=true')) {
-        showAnalysisResult();
-    }
-}
-
-function showAnalysisResult() {
-    document.getElementById('analysis-result').style.display = 'block';
-    document.getElementById('type').textContent = '阴虚质';
-    document.getElementById('description').textContent = '体质特点：容易口干、手脚心发热、睡眠质量差';
-    
-    const teaList = document.getElementById('tea-list');
-    const teas = ['菊花枸杞茶', '石斛养生茶', '桑菊茶'];
-    teas.forEach(tea => {
-        const li = document.createElement('li');
-        li.textContent = tea;
-        teaList.appendChild(li);
-    });
-}
-</script>
