@@ -1,0 +1,26 @@
+---
+layout: default
+title: 点我自测
+---
+
+<div class="text-center">
+    <h2>体质自测</h2>
+    <p class="lead">扫描下方二维码开始体质评估</p>
+    <div id="qrcode"></div>
+    <div class="mt-4">
+        <button class="btn btn-primary" onclick="showQRCode()">开始测试</button>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode.js"></script>
+<script>
+function showQRCode() {
+    // 这里替换为实际的问卷链接
+    var surveyUrl = "https://your-survey-url.com";
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+        text: surveyUrl,
+        width: 256,
+        height: 256
+    });
+}
+</script>
