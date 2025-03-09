@@ -1,3 +1,16 @@
+html, body {
+    background-color: #f5e6d3 !important;
+    min-height: 100vh;
+}
+
+body {
+    color: #4a3827;
+    font-family: "SimSun", "宋体", serif;
+    padding: 20px 0;
+}
+
+/* ... 其他样式保持不变 ... */
+
 body {
     background: #f5e6d3;
     color: #4a3827;
