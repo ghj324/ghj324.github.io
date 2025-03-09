@@ -14,11 +14,45 @@ title: 体质自测
                  class="img-fluid"
                  style="max-width: 300px; padding: 10px; background: white;">
         </div>
-        
-        <div id="analysis-results" class="mt-4">
-            <!-- 分析结果将在这里显示 -->
+
+        <!-- 添加结果显示区域 -->
+        <div id="analysis-result" class="mt-5" style="display: none;">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">您的体质分析结果</h3>
+                    <div class="constitution-type mt-4">
+                        <h4>体质类型：<span id="type"></span></h4>
+                        <p id="description" class="lead"></p>
+                    </div>
+                    <div class="recommendations mt-4">
+                        <h4>推荐养生茶饮</h4>
+                        <ul id="tea-list" class="list-unstyled"></ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-<script src="/assets/js/analysis.js"></script>
+<script>
+// 检查URL参数是否包含分析结果
+window.onload = function() {
+    if (window.location.search.includes('completed=true')) {
+        showAnalysisResult();
+    }
+}
+
+function showAnalysisResult() {
+    document.getElementById('analysis-result').style.display = 'block';
+    document.getElementById('type').textContent = '阴虚质';
+    document.getElementById('description').textContent = '体质特点：容易口干、手脚心发热、睡眠质量差';
+    
+    const teaList = document.getElementById('tea-list');
+    const teas = ['菊花枸杞茶', '石斛养生茶', '桑菊茶'];
+    teas.forEach(tea => {
+        const li = document.createElement('li');
+        li.textContent = tea;
+        teaList.appendChild(li);
+    });
+}
+</script>
