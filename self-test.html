@@ -12,8 +12,23 @@ title: 健康自测
     </div>
     
     <div class="qr-section">
-        <!-- 修改图片路径，使用绝对路径 -->
-        <img src="/ghj324.github.io/healthcare/img/tencent-qr.jpg" alt="健康自测问卷" class="qr-code">
+        <!-- 使用多种路径尝试 -->
+        <img src="/healthcare/img/tencent-qr.jpg" alt="健康自测问卷" class="qr-code" id="mainQR">
+        <script>
+            document.getElementById('mainQR').onerror = function() {
+                const paths = [
+                    '/img/tencent-qr.jpg',
+                    '../img/tencent-qr.jpg',
+                    './img/tencent-qr.jpg'
+                ];
+                for(let path of paths) {
+                    if(this.src !== path) {
+                        this.src = path;
+                        break;
+                    }
+                }
+            };
+        </script>
     </div>
 </div>
 
@@ -31,5 +46,6 @@ title: 健康自测
         display: block;
         border: 1px solid #ddd;
         padding: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 </style>
