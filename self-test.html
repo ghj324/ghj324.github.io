@@ -1,38 +1,53 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <title>健康自测</title>
-    <style>
-        .qr-container {
-            max-width: 800px;
-            margin: 50px auto;
-            text-align: center;
-            padding: 20px;
-        }
-        .qr-code {
-            width: 300px;
-            height: 300px;
-            margin: 20px auto;
-        }
-        .instruction {
-            margin: 20px 0;
-            padding: 20px;
-            background: #f5f5f5;
-            border-radius: 8px;
-        }
-    </style>
-</head>
-<body>
-    <div class="qr-container">
-        <h1>健康自测问卷</h1>
-        <div class="instruction">
-            <h2>使用说明</h2>
-            <p>1. 请使用手机扫描下方二维码</p>
-            <p>2. 在手机端填写您的健康状况</p>
-            <p>3. 提交后系统会根据您的情况推荐合适的调养方案</p>
-        </div>
-        <img src="img/qr-code.jpg" alt="问卷二维码" class="qr-code">
+---
+layout: default
+title: 健康自测
+---
+<div class="qr-container">
+    <h1>健康自测问卷</h1>
+    <div class="instruction">
+        <h2>使用说明</h2>
+        <p>1. 请使用手机扫描下方二维码</p>
+        <p>2. 在手机端填写您的健康状况</p>
+        <p>3. 提交后系统会自动分析并显示调养建议</p>
     </div>
-</body>
-</html>
+    <img src="img/qr-code.jpg" alt="问卷二维码" class="qr-code">
+    
+    <div id="analysis-result" class="result-section" style="display: none;">
+        <h2>体质分析结果</h2>
+        <div id="recommendations"></div>
+    </div>
+</div>
+
+<script src="/assets/js/survey-analysis.js"></script>
+<script>
+    // 定期检查新的提交
+    setInterval(async () => {
+        const results = await analyzeSurveyData();
+        if (results && results.length > 0) {
+            const resultDiv = document.getElementById('recommendations');
+            resultDiv.innerHTML = results.map(r => `
+                <div class="recommendation-card">
+                    <h3>${r.type}</h3>
+                    <p>${r.recommendation}</p>
+                </div>
+            `).join('');
+            document.getElementById('analysis-result').style.display = 'block';
+        }
+    }, 5000); // 每5秒检查一次
+</script>
+
+<style>
+    .result-section {
+        margin-top: 30px;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .recommendation-card {
+        margin: 15px 0;
+        padding: 15px;
+        background: #f9f9f9;
+        border-left: 4px solid #4CAF50;
+    }
+</style>
