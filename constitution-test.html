@@ -1,16 +1,86 @@
----
-layout: default
-title: 体质辨识
----
-
-<div class="constitution-content">
-    <h1>中医体质辨识</h1>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>体质辨识 - AI智能调养机</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .constitution-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .type-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .type-card h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .type-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .type-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
     <div class="constitution-types">
-        {% for type in site.constitution_types %}
         <div class="type-card">
-            <h2>{{ type.name }}</h2>
-            <a href="{{ type.link }}" class="learn-more">了解详情</a>
+            <h2>平和质</h2>
+            <a href="/constitution/balanced.html" class="type-button">了解详情</a>
         </div>
-        {% endfor %}
+        <div class="type-card">
+            <h2>气虚质</h2>
+            <a href="/constitution/qi-deficiency.html" class="type-button">了解详情</a>
+        </div>
+        <div class="type-card">
+            <h2>阳虚质</h2>
+            <a href="/constitution/yang-deficiency.html" class="type-button">了解详情</a>
+        </div>
+        <div class="type-card">
+            <h2>阴虚质</h2>
+            <a href="/constitution/yin-deficiency.html" class="type-button">了解详情</a>
+        </div>
+        <div class="type-card">
+            <h2>痰湿质</h2>
+            <a href="/constitution/phlegm-dampness.html" class="type-button">了解详情</a>
+        </div>
+        <div class="type-card">
+            <h2>湿热质</h2>
+            <a href="/constitution/damp-heat.html" class="type-button">了解详情</a>
+        </div>
+        <div class="type-card">
+            <h2>血瘀质</h2>
+            <a href="/constitution/blood-stasis.html" class="type-button">了解详情</a>
+        </div>
+        <div class="type-card">
+            <h2>气郁质</h2>
+            <a href="/constitution/qi-stagnation.html" class="type-button">了解详情</a>
+        </div>
+        <div class="type-card">
+            <h2>特禀质</h2>
+            <a href="/constitution/special.html" class="type-button">了解详情</a>
+        </div>
     </div>
-</div>
+</body>
+</html>
