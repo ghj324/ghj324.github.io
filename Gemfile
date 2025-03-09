@@ -1,10 +1,5 @@
 source "https://rubygems.org"
 
-gem "jekyll"
-gem "sinatra"
-gem "sinatra-contrib"
-gem "json"
-gem "sqlite3"
-gem "thin"
-gem "rack"
-gem "rack-cors"
+gem "github-pages", group: :jekyll_plugins
+gem "jekyll-theme-minimal"
+gem "webrick"
