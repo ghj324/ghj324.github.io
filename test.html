@@ -9,16 +9,16 @@ title: 体质自测
         <p class="lead mb-5">扫描下方二维码开始体质评估</p>
         
         <div class="qrcode-container mx-auto mb-4">
-            <!-- 使用问卷的直接链接生成二维码 -->
             <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://wj.qq.com/s2/18719659/fb44/" 
                  alt="问卷二维码" 
                  class="img-fluid"
                  style="max-width: 300px; padding: 10px; background: white;">
         </div>
         
-        <div class="mt-4">
-            <p class="mb-2">扫描二维码后，您将跳转到问卷系统进行测试</p>
-            <p>测试完成后，系统会自动为您生成体质分析报告</p>
+        <div id="analysis-results" class="mt-4">
+            <!-- 分析结果将在这里显示 -->
         </div>
     </div>
 </div>
+
+<script src="/assets/js/analysis.js"></script>
