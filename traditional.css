@@ -1,0 +1,54 @@
+body {
+    background: #f9f2e5 url('../images/chinese-medicine-bg.png') repeat;
+    color: #4a3827;
+    font-family: "SimSun", "宋体", serif;
+}
+
+.container {
+    background: rgba(255, 250, 240, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 30px;
+    border: 1px solid #d4c4a8;
+}
+
+.card {
+    background: #fffaf0;
+    border: 1px solid #d4c4a8;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+    color: #8b4513;
+    font-weight: bold;
+    border-bottom: 2px solid #d4c4a8;
+    padding-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #8b4513;
+    font-family: "FangSong", "仿宋", serif;
+}
+
+.btn-primary {
+    background-color: #8b4513;
+    border-color: #8b4513;
+}
+
+.btn-primary:hover {
+    background-color: #654321;
+    border-color: #654321;
+}
+
+.qrcode-container {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #d4c4a8;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.lead {
+    font-family: "KaiTi", "楷体", serif;
+    color: #5c4033;
+}
