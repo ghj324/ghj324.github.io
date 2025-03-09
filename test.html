@@ -8,20 +8,15 @@ title: 体质自测
         <h1 class="mb-4">体质自测</h1>
         <p class="lead mb-5">扫描下方二维码开始体质评估</p>
         <div class="qrcode-container mx-auto mb-4">
-            <img src="assets/images/tencent-qr.png" 
+            <img src="{{ site.baseurl }}/assets/images/tencent-qr.png" 
                  alt="问卷二维码" 
-                 class="img-fluid" 
-                 width="300" 
-                 height="300"
-                 style="max-width: 100%; height: auto;">
+                 class="img-fluid"
+                 onload="document.getElementById('debug-info').innerHTML += '<p style=\'color:green\'>图片加载成功</p>'"
+                 onerror="document.getElementById('debug-info').innerHTML += '<p style=\'color:red\'>图片加载失败，路径: ' + this.src + '</p>'">
         </div>
-        <div class="mt-4">
-            <p class="mb-2">扫描二维码后，您将跳转到问卷系统进行测试</p>
-            <p>测试完成后，系统会自动为您生成体质分析报告</p>
+        <!-- 添加调试信息面板 -->
+        <div id="debug-info" class="mt-3 text-left" style="background: #f8f9fa; padding: 10px; border-radius: 5px;">
+            <h6>图片加载状态：</h6>
         </div>
     </div>
 </div>
-<!-- 尝试这些路径格式 -->
-<img src="/assets/images/tencent-qr.png">
-<img src="{{ site.baseurl }}/assets/images/tencent-qr.png">
-<img src="./assets/images/tencent-qr.png">
