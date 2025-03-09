@@ -12,8 +12,15 @@ title: 健康自测
     </div>
     
     <div class="qr-section">
-        <!-- 修改图片路径 -->
-        <img src="{{ site.baseurl }}/healthcare/img/tencent-qr.jpg" alt="健康自测问卷" class="qr-code">
+        <!-- 使用绝对路径 -->
+        <img src="/ghj324.github.io/healthcare/img/tencent-qr.jpg" alt="健康自测问卷" class="qr-code" id="qrCode">
+        <!-- 添加错误处理 -->
+        <script>
+            document.getElementById('qrCode').onerror = function() {
+                console.log('图片加载失败，尝试备用路径');
+                this.src = '/img/tencent-qr.jpg';
+            };
+        </script>
     </div>
 </div>
 
