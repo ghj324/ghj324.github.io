@@ -2,6 +2,11 @@ title: AI智能调养机
 baseurl: "/healthcare1"
 url: "https://ghj324.github.io"
 
+# 确保包含资源文件
+include:
+  - assets
+  - assets/css
+
 # 问卷配置
 survey_id: "18719659"
 check_interval: 300  # 检查新回答的间隔（秒）
