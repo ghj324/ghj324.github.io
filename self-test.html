@@ -8,46 +8,108 @@ title: 健康自测
         <h2>使用说明</h2>
         <p>1. 请使用手机扫描下方二维码</p>
         <p>2. 在手机端填写您的健康状况</p>
-        <p>3. 提交后系统会自动分析并显示调养建议</p>
+        <p>3. 完成问卷后点击下方"查看分析结果"按钮</p>
     </div>
     <img src="img/qr-code.jpg" alt="问卷二维码" class="qr-code">
     
-    <div id="analysis-result" class="result-section" style="display: none;">
-        <h2>体质分析结果</h2>
-        <div id="recommendations"></div>
+    <div class="analysis-section">
+        <button onclick="showAnalysisForm()" class="analysis-btn">查看分析结果</button>
+        
+        <div id="analysis-form" style="display: none;">
+            <h3>请输入您的症状（多选）：</h3>
+            <div class="symptom-checkboxes">
+                <label><input type="checkbox" value="头痛"> 头痛</label>
+                <label><input type="checkbox" value="疲劳乏力"> 疲劳乏力</label>
+                <label><input type="checkbox" value="失眠"> 失眠</label>
+                <label><input type="checkbox" value="气血不足"> 气血不足</label>
+                <label><input type="checkbox" value="贫血"> 贫血</label>
+                <label><input type="checkbox" value="肥胖"> 肥胖</label>
+                <label><input type="checkbox" value="湿气重"> 湿气重</label>
+                <label><input type="checkbox" value="痛经"> 痛经</label>
+                <label><input type="checkbox" value="便秘"> 便秘</label>
+                <label><input type="checkbox" value="抑郁"> 抑郁</label>
+                <label><input type="checkbox" value="消化不良"> 消化不良</label>
+                <label><input type="checkbox" value="食欲不振"> 食欲不振</label>
+            </div>
+            <button onclick="analyzeSymptoms()" class="submit-btn">生成分析结果</button>
+        </div>
+        
+        <div id="result" class="result-section" style="display: none;"></div>
     </div>
 </div>
 
-<script src="/assets/js/survey-analysis.js"></script>
-<script>
-    // 定期检查新的提交
-    setInterval(async () => {
-        const results = await analyzeSurveyData();
-        if (results && results.length > 0) {
-            const resultDiv = document.getElementById('recommendations');
-            resultDiv.innerHTML = results.map(r => `
-                <div class="recommendation-card">
-                    <h3>${r.type}</h3>
-                    <p>${r.recommendation}</p>
-                </div>
-            `).join('');
-            document.getElementById('analysis-result').style.display = 'block';
-        }
-    }, 5000); // 每5秒检查一次
-</script>
-
 <style>
+    .qr-container {
+        max-width: 800px;
+        margin: 50px auto;
+        text-align: center;
+    }
+    .analysis-btn, .submit-btn {
+        background: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 20px 0;
+    }
+    .symptom-checkboxes {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+        text-align: left;
+        margin: 20px 0;
+        padding: 20px;
+        background: #f5f5f5;
+        border-radius: 8px;
+    }
     .result-section {
-        margin-top: 30px;
+        margin-top: 20px;
         padding: 20px;
         background: #fff;
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    .recommendation-card {
-        margin: 15px 0;
-        padding: 15px;
-        background: #f9f9f9;
-        border-left: 4px solid #4CAF50;
-    }
 </style>
+
+<script>
+const symptoms = {
+    '头痛': { type: '肝阳上亢', recommendation: '菊花枸杞茶：菊花15g，枸杞10g，决明子10g' },
+    '疲劳乏力': { type: '气虚', recommendation: '人参养荣茶：人参5g，黄芪15g，当归10g' },
+    '失眠': { type: '心脾两虚', recommendation: '养心安神茶：酸枣仁15g，柏子仁10g' },
+    '气血不足': { type: '气血两虚', recommendation: '八珍汤：当归10g，白芍10g，川芎6g' },
+    '贫血': { type: '血虚', recommendation: '当归补血茶：当归15g，红枣10g，枸杞10g' },
+    '肥胖': { type: '痰湿', recommendation: '荷叶减脂茶：荷叶10g，决明子10g，山楂10g' },
+    '湿气重': { type: '脾虚痰湿', recommendation: '祛湿茶：茯苓15g，薏苡仁20g，陈皮6g' },
+    '痛经': { type: '血瘀', recommendation: '温经汤：当归10g，川芎10g，桂枝6g' },
+    '便秘': { type: '阴虚便秘', recommendation: '麦冬润肠茶：麦冬15g，玄参10g，枇杷叶10g' },
+    '抑郁': { type: '肝气郁结', recommendation: '解郁茶：柴胡10g，香附10g，陈皮6g' },
+    '消化不良': { type: '脾胃虚弱', recommendation: '健脾茶：党参15g，白术10g，陈皮6g' },
+    '食欲不振': { type: '脾胃虚弱', recommendation: '开胃茶：焦三仙15g，山楂10g，陈皮6g' }
+};
+
+function showAnalysisForm() {
+    document.getElementById('analysis-form').style.display = 'block';
+}
+
+function analyzeSymptoms() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    const selectedSymptoms = Array.from(checkboxes).map(cb => cb.value);
+    
+    let resultHTML = '<h3>体质分析结果</h3>';
+    selectedSymptoms.forEach(symptom => {
+        const analysis = symptoms[symptom];
+        resultHTML += `
+            <div class="result-card">
+                <h4>症状：${symptom}</h4>
+                <p>体质类型：${analysis.type}</p>
+                <p>推荐调养：${analysis.recommendation}</p>
+            </div>
+        `;
+    });
+    
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = resultHTML;
+    resultDiv.style.display = 'block';
+}
+</script>
