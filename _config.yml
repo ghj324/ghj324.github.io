@@ -39,3 +39,4 @@ constitution_types:
 # 插件配置
 plugins:
   - jekyll-sitemap
+qr_code: /img/tencent-qr.jpg
