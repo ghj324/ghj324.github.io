@@ -1,7 +1,31 @@
-require 'httparty'
 require 'json'
+require 'net/http'
 
 class SurveyService
+  SURVEY_ID = '18719659'
+  
+  def initialize
+    @last_check_time = Time.now
+  end
+
+  def fetch_responses
+    # 使用问卷的公开数据接口
+    url = "https://wj.qq.com/api/survey/#{SURVEY_ID}/responses"
+    
+    begin
+      response = Net::HTTP.get_response(URI(url))
+      if response.is_a?(Net::HTTPSuccess)
+        JSON.parse(response.body)
+      else
+        { error: '获取数据失败' }
+      end
+    rescue => e
+      { error: e.message }
+    end
+  end
+
+  # ... 其他代码保持不变 ...
+end
   CONSTITUTION_KEYWORDS = {
     '阳虚质' => ['怕冷', '手脚冰凉', '精神疲惫'],
     '阴虚质' => ['失眠', '头疼', '衰老'],
