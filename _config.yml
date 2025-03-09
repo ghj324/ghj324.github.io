@@ -1,24 +1,21 @@
-name: AI智能调养机
-url: https://ghj324.github.io
+title: AI智能调养机
+baseurl: ""
+url: "https://ghj324.github.io"
 
-navigation:
-  - title: 首页
-    link: /
-  - title: 体质辨识
-    link: /constitution/
-  - title: 点我自测
-    link: /test/
+# 构建设置
+markdown: kramdown
+exclude: [
+  'Gemfile',
+  'Gemfile.lock',
+  'node_modules',
+  'vendor/bundle/',
+  'vendor/cache/',
+  'vendor/gems/',
+  'vendor/ruby/'
+]
 
+# 集合设置
 collections:
   constitution_types:
     output: true
     permalink: /constitution/:path/
-
-defaults:
-  - scope:
-      path: ""
-      type: "constitution_types"
-    values:
-      layout: "constitution"
-
-markdown: kramdown
