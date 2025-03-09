@@ -15,31 +15,12 @@ title: 体质自测
         </div>
 
         <div class="qrcode-container mx-auto mb-4">
-            <img src="{{ site.baseurl }}/assets/images/tencent-qr.png" 
+            <!-- 修改图片路径 -->
+            <img src="/healthcare1/assets/images/tencent-qr.png" 
                  alt="问卷二维码" 
                  class="img-fluid"
                  onload="showDebugInfo('图片加载成功', 'success')"
-                 onerror="showDebugInfo('图片加载失败，请检查路径: ' + this.src, 'error')">
+                 onerror="showDebugInfo('图片加载失败，尝试备用路径', 'error'); this.src='assets/images/tencent-qr.png';">
         </div>
     </div>
 </div>
-
-<script>
-function showDebugInfo(message, type) {
-    const debugInfo = document.getElementById('debug-info');
-    const color = type === 'success' ? 'green' : 'red';
-    const time = new Date().toLocaleTimeString();
-    debugInfo.innerHTML += `
-        <div style="color: ${color}; margin: 5px 0; text-align: left;">
-            [${time}] ${message}
-        </div>
-    `;
-}
-
-// 页面加载完成后显示图片信息
-window.onload = function() {
-    const img = document.querySelector('.qrcode-container img');
-    showDebugInfo(`图片路径: ${img.src}`, 'info');
-    showDebugInfo(`图片是否加载: ${img.complete}`, 'info');
-}
-</script>
