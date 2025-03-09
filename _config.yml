@@ -5,7 +5,10 @@ url: "https://ghj324.github.io"
 
 # 构建设置
 markdown: kramdown
-include: ['assets']
+include: 
+  - assets
+  - assets/images
+  - _layouts
 exclude: [
   'Gemfile',
   'Gemfile.lock',
