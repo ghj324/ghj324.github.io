@@ -12,20 +12,18 @@ title: 健康自测
     </div>
     
     <div class="qr-section">
-        <img src="{{ site.baseurl }}/img/qr-code.jpg" alt="健康自测问卷" class="qr-code">
+        <!-- 添加时间戳强制刷新缓存 -->
+        <img src="{{ site.baseurl }}/img/qr-code.jpg?t=20231205" alt="健康自测问卷" class="qr-code">
     </div>
 </div>
 
 <style>
-    .qr-container {
-        max-width: 800px;
-        margin: 50px auto;
-        text-align: center;
-    }
     .qr-code {
         width: 300px;
         height: 300px;
         margin: 20px auto;
         display: block;
+        border: 1px solid #ddd;
+        padding: 10px;
     }
 </style>
