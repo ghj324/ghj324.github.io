@@ -4,6 +4,11 @@ body {
     background-opacity: 0.2;
 }
 body {
+    /* 使用淡雅的中药材图案 */
+    background: #f5e6d3 url('https://img.freepik.com/free-photo/traditional-chinese-medicine_1387-676.jpg') repeat;
+    background-opacity: 0.2;
+}
+body {
     background: #f9f2e5 url('../images/chinese-medicine-bg.png') repeat;
     color: #4a3827;
     font-family: "SimSun", "宋体", serif;
