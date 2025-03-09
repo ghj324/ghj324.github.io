@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AI智能调养机</title>
+    <style>
+        body { text-align: center; padding-top: 50px; }
+        .nav-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI智能调养机</h1>
+    <div>
+        <a href="/constitution-test" class="nav-button">体质辨识</a>
+        <a href="/self-test" class="nav-button">点我自测</a>
+    </div>
+</body>
+</html>
