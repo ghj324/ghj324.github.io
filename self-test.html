@@ -12,7 +12,7 @@ title: 健康自测
     </div>
     
     <div class="qr-section">
-        <img src="{{ site.baseurl }}/img/qr-code.jpg" alt="健康自测问卷" class="qr-code" id="qrCode">
+        <img src="{{ site.baseurl }}/img/tencent-qr" alt="健康自测问卷" class="qr-code">
     </div>
 </div>
 
@@ -32,12 +32,3 @@ title: 健康自测
         padding: 10px;
     }
 </style>
-
-<script>
-window.onload = function() {
-    var img = document.getElementById('qrCode');
-    img.onerror = function() {
-        this.src = 'img/qr-code.jpg';
-    }
-}
-</script>
