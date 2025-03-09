@@ -12,8 +12,8 @@ title: 健康自测
     </div>
     
     <div class="qr-section">
-        <!-- 使用相对路径并添加时间戳防止缓存 -->
-        <img src="img/qr-code.jpg?v=20231205" alt="健康自测问卷" class="qr-code">
+        <!-- 使用绝对路径并添加随机参数强制刷新缓存 -->
+        <img src="{{ site.baseurl }}/healthcare/img/qr-code.jpg?t={{ site.time | date: '%s' }}" alt="健康自测问卷" class="qr-code">
     </div>
 </div>
 
@@ -30,5 +30,11 @@ title: 健康自测
         display: block;
         border: 1px solid #ddd;
         padding: 10px;
+    }
+    .instruction {
+        margin: 20px 0;
+        padding: 20px;
+        background: #f5f5f5;
+        border-radius: 8px;
     }
 </style>
