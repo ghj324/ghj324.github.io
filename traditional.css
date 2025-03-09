@@ -53,60 +53,17 @@ h1, h2, h3, h4, h5 {
     margin-bottom: 1.5rem;
 }
 
-h1 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
 /* 按钮样式 */
 .btn-primary {
     background-color: #8b4513;
     border-color: #8b4513;
     padding: 0.5rem 2rem;
-    font-size: 1.1rem;
     transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
     background-color: #654321;
     border-color: #654321;
-    transform: translateY(-2px);
-}
-
-/* 二维码容器 */
-.qrcode-container {
-    background: #fff;
-    padding: 2rem;
-    border: 1px solid #d4c4a8;
-    box-shadow: 0 0 15px rgba(139, 69, 19, 0.1);
-    border-radius: 12px;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-/* 文本样式 */
-.lead {
-    color: #5c4033;
-    line-height: 1.8;
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-
-/* 列表样式 */
-.list-unstyled li {
-    color: #5c4033;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.list-unstyled li:before {
-    content: "•";
-    color: #8b4513;
-    position: absolute;
-    left: 0;
 }
 
 /* 页脚样式 */
@@ -114,5 +71,4 @@ h1 {
     background-color: rgba(255, 250, 240, 0.95);
     padding: 2rem 0;
     color: #8b4513;
-    box-shadow: 0 -2px 10px rgba(139, 69, 19, 0.1);
 }
