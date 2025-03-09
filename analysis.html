@@ -1,0 +1,49 @@
+---
+layout: default
+title: 体质分析
+---
+
+<div class="container">
+    <div class="text-center my-5">
+        <h1 class="mb-4">体质分析</h1>
+        <div id="loading" class="my-4">
+            <p>正在分析您的体质，请稍候...</p>
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+        <div id="analysis-result" class="mt-4" style="display: none;">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title mb-4">您的体质分析结果</h3>
+                    <div id="constitution-type" class="mb-4"></div>
+                    <div id="recommendations" class="mb-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('analysis-result').style.display = 'block';
+        
+        // 示例结果
+        document.getElementById('constitution-type').innerHTML = `
+            <h4>体质类型：阴虚质</h4>
+            <p class="lead">特点：容易口干、手脚心发热、睡眠质量差</p>
+        `;
+        
+        document.getElementById('recommendations').innerHTML = `
+            <h4>推荐养生茶饮</h4>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">菊花枸杞茶</li>
+                <li class="list-group-item">石斛养生茶</li>
+                <li class="list-group-item">桑菊茶</li>
+            </ul>
+        `;
+    }, 2000);
+});
+</script>
