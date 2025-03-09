@@ -1,10 +1,10 @@
 name: AI智能调养机
-url: http://ai-health.com
+url: https://ghj324.github.io
+baseurl: ""
 
-# 基本设置
 title: AI智能调养机
 description: 智能中医体质辨识与调养平台
-baseurl: ""
+
 
 # 导航栏配置
 navigation:
