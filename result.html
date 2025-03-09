@@ -1,0 +1,77 @@
+---
+layout: default
+title: 体质分析结果
+---
+
+<div class="container">
+    <div class="text-center my-5">
+        <h1 class="mb-4">体质分析结果</h1>
+        <div id="loading" class="my-4">
+            <p>正在分析您的体质，请稍候...</p>
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+        <div id="result" class="my-4" style="display: none;">
+            <div class="constitution-type mb-4">
+                <h3>您的体质类型</h3>
+                <p id="constitution-result" class="lead"></p>
+            </div>
+            <div class="recommendations mb-4">
+                <h3>养生建议</h3>
+                <div id="tea-recommendations" class="card-deck"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 从 URL 参数获取问卷答案
+    const urlParams = new URLSearchParams(window.location.search);
+    const answers = Object.fromEntries(urlParams);
+    
+    // 分析结果
+    analyzeAnswers(answers);
+});
+
+async function analyzeAnswers(answers) {
+    try {
+        const response = await fetch('/api/analyze', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(answers)
+        });
+        
+        const result = await response.json();
+        displayResults(result);
+    } catch (error) {
+        console.error('分析失败:', error);
+        document.getElementById('loading').innerHTML = '<p class="text-danger">分析出错，请稍后重试</p>';
+    }
+}
+
+function displayResults(data) {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('result').style.display = 'block';
+    
+    // 显示体质类型
+    document.getElementById('constitution-result').textContent = data.constitution_type;
+    
+    // 显示养生建议
+    const recommendationsDiv = document.getElementById('tea-recommendations');
+    data.recommendations.forEach(tea => {
+        const card = document.createElement('div');
+        card.className = 'card mb-3';
+        card.innerHTML = `
+            <div class="card-body">
+                <h5 class="card-title">${tea.name}</h5>
+                <p class="card-text">${tea.description}</p>
+            </div>
+        `;
+        recommendationsDiv.appendChild(card);
+    });
+}
+</script>
