@@ -72,3 +72,42 @@ h1, h2, h3, h4, h5 {
     padding: 2rem 0;
     color: #8b4513;
 }
+/* ... 原有的样式代码 ... */
+
+/* 标语部分样式 */
+.slogan-section {
+    padding: 2rem 0;
+    background: rgba(255, 252, 245, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(139, 69, 19, 0.1);
+}
+
+.artistic-font {
+    font-family: "楷体", KaiTi, serif;
+    color: #8b4513;
+    text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.1);
+}
+
+.slogan-text h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.slogan-text h3 {
+    font-size: 2rem;
+    color: #a0522d;
+}
+
+.slogan-text .lead {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #8b4513;
+}
+
+.slogan-section img {
+    transition: transform 0.3s ease;
+}
+
+.slogan-section img:hover {
+    transform: scale(1.05);
+}
