@@ -1,5 +1,4 @@
 ---
----
 layout: default
 title: 体质自测
 ---
@@ -18,33 +17,56 @@ title: 体质自测
         
         <!-- 二维码部分 -->
         <div class="qrcode-container mx-auto mb-4">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://wj.qq.com/s2/18743020/18qx//" 
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://wj.qq.com/s2/18743020/18qx/" 
                  alt="问卷二维码" 
                  class="img-fluid"
                  style="max-width: 300px; padding: 10px; background: white;">
         </div>
 
-        <!-- 分析结果部分 -->
-        <div class="mt-5">
+        <!-- 分析结果部分（默认隐藏） -->
+        <div id="analysis-result" class="mt-5" style="display: none;">
             <div class="card">
                 <div class="card-body">
-                    <h3>常见体质类型及调理建议</h3>
-                    <div class="row mt-4">
-                        <div class="col-md-6">
-                            <h4>阴虚体质</h4>
-                            <p>推荐：菊花枸杞茶、石斛养生茶</p>
+                    <h3>您的体质分析结果</h3>
+                    <div id="constitution-type" class="mt-4"></div>
+                    <div id="recommendations" class="mt-4"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 手动选择按钮 -->
+        <div class="mt-4">
+            <button class="btn btn-primary" onclick="showAnalysisForm()">查看分析结果</button>
+        </div>
+
+        <!-- 症状选择表单（默认隐藏） -->
+        <div id="symptom-form" class="mt-4" style="display: none;">
+            <div class="card">
+                <div class="card-body">
+                    <h4>请选择您的主要症状（可多选）：</h4>
+                    <div class="symptom-options mt-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="失眠" id="symptom1">
+                            <label class="form-check-label" for="symptom1">失眠多梦</label>
                         </div>
-                        <div class="col-md-6">
-                            <h4>阳虚体质</h4>
-                            <p>推荐：生姜红糖茶、桂圆红枣茶</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="头疼" id="symptom2">
+                            <label class="form-check-label" for="symptom2">头疼头晕</label>
                         </div>
-                        <div class="col-md-6">
-                            <h4>气虚体质</h4>
-                            <p>推荐：人参养生茶、黄芪当归茶</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="疲劳" id="symptom3">
+                            <label class="form-check-label" for="symptom3">容易疲劳</label>
                         </div>
-                        <div class="col-md-6">
-                            <h4>痰湿体质</h4>
-                            <p>推荐：荷叶山楂茶、陈皮普洱茶</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="消化不良" id="symptom4">
+                            <label class="form-check-label" for="symptom4">消化不良</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="抑郁" id="symptom5">
+                            <label class="form-check-label" for="symptom5">情绪低落</label>
+                        </div>
+                        <div class="mt-4">
+                            <button class="btn btn-primary" onclick="analyzeSymptoms()">生成分析结果</button>
                         </div>
                     </div>
                 </div>
@@ -52,3 +74,50 @@ title: 体质自测
         </div>
     </div>
 </div>
+
+<script>
+function showAnalysisForm() {
+    document.getElementById('symptom-form').style.display = 'block';
+}
+
+function analyzeSymptoms() {
+    const symptoms = [];
+    document.querySelectorAll('.form-check-input:checked').forEach(checkbox => {
+        symptoms.push(checkbox.value);
+    });
+
+    let constitutionType = '';
+    let recommendations = [];
+
+    // 根据症状判断体质类型
+    if (symptoms.includes('失眠') || symptoms.includes('头疼')) {
+        constitutionType = '阴虚质';
+        recommendations = ['菊花枸杞茶', '石斛养生茶'];
+    } else if (symptoms.includes('疲劳')) {
+        constitutionType = '气虚质';
+        recommendations = ['人参养生茶', '黄芪当归茶'];
+    } else if (symptoms.includes('消化不良')) {
+        constitutionType = '脾虚质';
+        recommendations = ['陈皮山楂茶', '茯苓薏仁茶'];
+    } else if (symptoms.includes('抑郁')) {
+        constitutionType = '气郁质';
+        recommendations = ['玫瑰花茶', '柑橘茯苓茶'];
+    }
+
+    // 显示结果
+    document.getElementById('analysis-result').style.display = 'block';
+    document.getElementById('constitution-type').innerHTML = `
+        <h4>体质类型：${constitutionType}</h4>
+        <p class="mt-3">根据您的症状分析，您属于${constitutionType}体质。</p>
+    `;
+    document.getElementById('recommendations').innerHTML = `
+        <h4>推荐养生茶饮：</h4>
+        <ul class="list-unstyled">
+            ${recommendations.map(tea => `<li class="mt-2">• ${tea}</li>`).join('')}
+        </ul>
+        <div class="mt-4">
+            <p class="text-muted">温馨提示：建议您根据自身情况选择合适的茶饮，如有特殊情况请咨询专业医师。</p>
+        </div>
+    `;
+}
+</script>
