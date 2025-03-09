@@ -1,26 +1,7 @@
-encoding: utf-8
 title: AI智能调养机
-baseurl: "/healthcare1"
+baseurl: ""
 url: "https://ghj324.github.io"
 
-# 构建设置
+# 简化配置
 markdown: kramdown
-include: 
-  - assets
-  - assets/images
-  - _layouts
-exclude: [
-  'Gemfile',
-  'Gemfile.lock',
-  'node_modules',
-  'vendor/bundle/',
-  'vendor/cache/',
-  'vendor/gems/',
-  'vendor/ruby/'
-]
-
-# 集合设置
-collections:
-  constitution_types:
-    output: true
-    permalink: /constitution/:path/
+include: ['img']
