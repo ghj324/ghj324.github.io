@@ -111,3 +111,53 @@ h1, h2, h3, h4, h5 {
 .slogan-section img:hover {
     transform: scale(1.05);
 }
+/* 全局背景色 */
+html, body {
+    background-color: #f3e5d0 !important; /* 浅米黄色背景 */
+    min-height: 100vh;
+    font-family: 'Noto Serif SC', 'SimSun', serif;
+}
+
+/* 容器背景 */
+.container {
+    background: rgba(251, 244, 235, 0.95); /* 温暖的米色 */
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(146, 99, 45, 0.1);
+    padding: 2rem;
+    margin-top: 2rem;
+    border: 2px solid #d4b792; /* 淡棕色边框 */
+}
+
+/* 卡片样式 */
+.card {
+    background: #fdfaf5; /* 更柔和的米白色 */
+    border: 1px solid #d4b792;
+    box-shadow: 3px 3px 15px rgba(146, 99, 45, 0.08);
+}
+
+/* 标题颜色 */
+h1, h2, h3, h4, h5 {
+    color: #8b5a2b; /* 深棕色 */
+}
+
+/* 按钮样式 */
+.btn-primary {
+    background-color: #a67c52; /* 温暖的棕色 */
+    border-color: #8b5a2b;
+}
+
+.btn-primary:hover {
+    background-color: #8b5a2b;
+    border-color: #704617;
+}
+
+/* 文本颜色 */
+.lead {
+    color: #6b4423; /* 深褐色 */
+}
+
+/* 页脚样式 */
+.footer {
+    background-color: rgba(251, 244, 235, 0.95);
+    color: #8b5a2b;
+}
