@@ -1,47 +1,35 @@
-.constitution-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
+.card {
     transition: transform 0.3s ease;
+    margin-bottom: 20px;
 }
 
-.constitution-card:hover {
+.card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.qrcode-container {
-    max-width: 300px;
+.btn-primary {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.lead {
+    color: #6c757d;
+}
+
+.container {
+    max-width: 1140px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
-.nav-link {
-    font-size: 1.1em;
-    font-weight: 500;
-}
-#qrcode-container {
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-#result-container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.recommendation-item {
-    margin: 10px 0;
-    padding: 15px;
-    background: #fff;
-    border-left: 4px solid #28a745;
-    border-radius: 4px;
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 15px;
+    }
 }
