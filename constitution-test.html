@@ -1,0 +1,16 @@
+---
+layout: default
+title: 体质辨识
+---
+
+<div class="constitution-content">
+    <h1>中医体质辨识</h1>
+    <div class="constitution-types">
+        {% for type in site.constitution_types %}
+        <div class="type-card">
+            <h2>{{ type.name }}</h2>
+            <a href="{{ type.link }}" class="learn-more">了解详情</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
