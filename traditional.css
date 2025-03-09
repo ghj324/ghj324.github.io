@@ -1,32 +1,28 @@
 body {
-    /* 使用淡雅的中药材图案 */
-    background: #f5e6d3 url('https://img.freepik.com/free-photo/traditional-chinese-medicine_1387-676.jpg') repeat;
-    background-opacity: 0.2;
-}
-body {
-    /* 使用淡雅的中药材图案 */
-    background: #f5e6d3 url('https://img.freepik.com/free-photo/traditional-chinese-medicine_1387-676.jpg') repeat;
-    background-opacity: 0.2;
-}
-body {
-    background: #f9f2e5 url('../images/chinese-medicine-bg.png') repeat;
+    background: #f5e6d3;
     color: #4a3827;
     font-family: "SimSun", "宋体", serif;
 }
 
 .container {
-    background: rgba(255, 250, 240, 0.9);
+    background: rgba(255, 252, 245, 0.95);
     border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(139, 69, 19, 0.1);
     padding: 30px;
     margin-top: 30px;
-    border: 1px solid #d4c4a8;
+    border: 2px solid #d4c4a8;
 }
 
 .card {
     background: #fffaf0;
     border: 1px solid #d4c4a8;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 3px 3px 15px rgba(139, 69, 19, 0.08);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 5px 20px rgba(139, 69, 19, 0.12);
 }
 
 .card-title {
@@ -34,6 +30,7 @@ body {
     font-weight: bold;
     border-bottom: 2px solid #d4c4a8;
     padding-bottom: 10px;
+    font-family: "FangSong", "仿宋", serif;
 }
 
 h1, h2, h3, h4, h5 {
@@ -44,6 +41,7 @@ h1, h2, h3, h4, h5 {
 .btn-primary {
     background-color: #8b4513;
     border-color: #8b4513;
+    transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
@@ -55,10 +53,18 @@ h1, h2, h3, h4, h5 {
     background: #fff;
     padding: 20px;
     border: 1px solid #d4c4a8;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(139, 69, 19, 0.1);
+    border-radius: 8px;
 }
 
 .lead {
     font-family: "KaiTi", "楷体", serif;
     color: #5c4033;
+    line-height: 1.8;
+}
+
+.list-unstyled li {
+    color: #5c4033;
+    margin-bottom: 8px;
+    line-height: 1.6;
 }
