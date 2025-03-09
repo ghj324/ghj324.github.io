@@ -1,4 +1,6 @@
-_site
-_includes/pubs.html
-/test-deploy.sh
-_config.yml
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+~$*
+*.tmp
