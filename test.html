@@ -8,19 +8,16 @@ title: 体质自测
         <h1 class="mb-4">体质自测</h1>
         <p class="lead mb-5">扫描下方二维码开始体质评估</p>
         
-        <!-- 调试信息面板 -->
-        <div class="alert alert-info mb-4" role="alert">
-            <strong>图片加载状态：</strong>
-            <div id="debug-info"></div>
-        </div>
-
         <div class="qrcode-container mx-auto mb-4">
-            <!-- 修改图片路径 -->
-            <img src="/healthcare1/assets/images/tencent-qr.png" 
+            <!-- 修改图片引用方式 -->
+            <img src="{% raw %}{{ '/assets/images/tencent-qr.png' | relative_url }}{% endraw %}" 
                  alt="问卷二维码" 
-                 class="img-fluid"
-                 onload="showDebugInfo('图片加载成功', 'success')"
-                 onerror="showDebugInfo('图片加载失败，尝试备用路径', 'error'); this.src='assets/images/tencent-qr.png';">
+                 class="img-fluid">
+        </div>
+        
+        <div class="mt-4">
+            <p class="mb-2">扫描二维码后，您将跳转到问卷系统进行测试</p>
+            <p>测试完成后，系统会自动为您生成体质分析报告</p>
         </div>
     </div>
 </div>
