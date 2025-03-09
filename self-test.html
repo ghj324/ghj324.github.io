@@ -1,7 +1,6 @@
 ---
 layout: default
 title: 健康自测
-qr_image: /img/tencent-qr.jpg
 ---
 <div class="qr-container">
     <h1>健康自测问卷</h1>
@@ -13,6 +12,24 @@ qr_image: /img/tencent-qr.jpg
     </div>
     
     <div class="qr-section">
-        <img src="{{ page.qr_image }}?v=1" alt="健康自测问卷" class="qr-code">
+        <!-- 修改图片路径，使用绝对路径 -->
+        <img src="/ghj324.github.io/healthcare/img/tencent-qr.jpg" alt="健康自测问卷" class="qr-code">
     </div>
 </div>
+
+<style>
+    .qr-container {
+        max-width: 800px;
+        margin: 50px auto;
+        text-align: center;
+        padding: 20px;
+    }
+    .qr-code {
+        width: 300px;
+        height: 300px;
+        margin: 20px auto;
+        display: block;
+        border: 1px solid #ddd;
+        padding: 10px;
+    }
+</style>
