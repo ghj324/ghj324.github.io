@@ -9,9 +9,11 @@ title: 体质自测
         <p class="lead mb-5">扫描下方二维码开始体质评估</p>
         
         <div class="qrcode-container mx-auto mb-4">
-            <img src="assets/images/tencent-qr.png" 
+            <!-- 尝试多种图片路径引用方式 -->
+            <img src="{{ site.baseurl }}/assets/images/tencent-qr.png" 
                  alt="问卷二维码" 
-                 class="img-fluid">
+                 class="img-fluid"
+                 onerror="this.onerror=null; this.src='./assets/images/tencent-qr.png';">
         </div>
         
         <div class="mt-4">
@@ -20,3 +22,16 @@ title: 体质自测
         </div>
     </div>
 </div>
+
+<!-- 添加调试信息 -->
+<div style="display:none;" id="debug-info">
+    <p>当前图片路径: <span id="img-path"></span></p>
+    <p>baseurl: <span id="base-url">{{ site.baseurl }}</span></p>
+</div>
+
+<script>
+window.onload = function() {
+    var img = document.querySelector('.qrcode-container img');
+    document.getElementById('img-path').textContent = img.src;
+}
+</script>
