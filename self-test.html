@@ -12,7 +12,27 @@ title: 健康自测
     </div>
     
     <div class="qr-section">
-        <img src="{{ '/img/qr-code.jpg' | relative_url }}" alt="健康自测问卷" class="qr-code">
+        <!-- 主要二维码图片 -->
+        <img src="img/qr-code.jpg" alt="健康自测问卷" class="qr-code" id="mainQR">
+        
+        <!-- 备用二维码图片（如果主要的加载失败） -->
+        <script>
+            document.getElementById('mainQR').onerror = function() {
+                // 尝试其他路径
+                const paths = [
+                    '/healthcare/img/qr-code.jpg',
+                    '../img/qr-code.jpg',
+                    './img/qr-code.jpg'
+                ];
+                
+                for(let path of paths) {
+                    if(this.src !== path) {
+                        this.src = path;
+                        return;
+                    }
+                }
+            };
+        </script>
     </div>
 </div>
 
